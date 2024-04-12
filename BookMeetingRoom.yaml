@@ -1,0 +1,9 @@
+name: BookMeetingRoom
+jobs:
+  bulid:
+    run-on: macos-latest
+  steps:
+    - name: add meeting room
+      run: |
+          cd bookMeetingRoom
+          sh run.sh

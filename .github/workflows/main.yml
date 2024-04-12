@@ -11,5 +11,6 @@ jobs:
         node-version: '20.x'
      - name: bookTask
        run: |
+         cd workflows
          node bookMeetRoom.js
       

@@ -1,0 +1,15 @@
+on:
+  schedule:
+  - cron: "0 11 * * *"
+jobs:
+  my_job:
+    name: book meeting room
+    runs-on: ubuntu-latest
+  steps:
+   - uses: workflows/bookMeetRoom.js
+     with:
+      node-version: '20.x'
+   - name: bookTask
+     run: |
+     node bookMeetRoom.js
+    

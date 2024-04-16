@@ -1,0 +1,26 @@
+name: Book Meeting Room
+
+on:
+  schedule:
+    # 每周五的北京时间上午9点执行，UTC时间是每周五的01:00 (北京时间比UTC时间早8小时)
+    # * 是通配符，表示任意值
+    # cron 格式: 分 时 日 月 周
+    - cron: "0 1 * * 1-5"
+
+jobs:
+  book_meeting_room:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14" # 指定Node.js的版本
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run book meeting room script
+        run: node bookMeeting.js

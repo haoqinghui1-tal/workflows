@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {Room} from './config.js'
-const curRoom  = Room[805]
+const curRoom  = Room[806]
 const meetingDate={
   startDate: getCurrentDate(),
   endDate: getCurrentDate(),
@@ -9,6 +9,7 @@ const meetingDate={
   startTimeCycle: "10:00",
   endTimeCycle: "11:00",
 }
+
 const data = {
     meeting_type_service: [],
     meeting_type_id: "",
@@ -107,6 +108,7 @@ const data = {
       department: "Team 1-在线学习事业部-互联网研发部-前端研发部-学习组"
     }
   }
+console.log('data',data);
 // 创建实例时配置默认值
 const http = axios.create({
     Headers: {
